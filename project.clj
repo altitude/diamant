@@ -1,5 +1,5 @@
-(defproject diamant "0.1.0-SNAPSHOT"
-  :description "Commonly useful space modeling functions for scad-clj"
+(defproject diamant "0.2.0-SNAPSHOT"
+  :description "Practical space-modeling commons & helpers for scad-clj"
   :url "https://github.com/altitude/diamant"
   :license {:name "MIT"}
   :dependencies [[org.clojure/clojure "1.10.0"]
