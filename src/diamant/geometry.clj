@@ -14,10 +14,14 @@
             (model/rotate [0 0 (* angle %1)]))))))
 
 (defn symmetry
-  [block]
-  (->>
-   [-1 1]
-   (map #(->>
-          block
-          (model/scale [%1 1 1])))
-   (apply model/union)))
+  ([axis object]
+   (let [scale (case axis
+                 :x [-1 1 1]
+                 :y [1 -1 1]
+                 :z [1 1 -1]
+                 [1 1 1])]
+     (model/union
+      object
+      (model/scale scale object))))
+  ([object]
+   (symmetry :x object)))
